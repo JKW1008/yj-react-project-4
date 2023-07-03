@@ -6,7 +6,7 @@ export default function RightSide() {
     >
       <p>Scroll</p>
       <div className=" w-[1px] h-[120px] bg-neutral-400 mx-auto relative">
-        <div className=" absolute w-1.5 h-1.5 rounded-full bg-neutral-700 -top-1 -left-[2.2px]"></div>
+        <div className=" absolute w-1.5 h-1.5 rounded-full bg-neutral-700 -top-1 -left-[2px] animate-moving-dots"></div>
       </div>
     </div>
   );

@@ -19,10 +19,16 @@ module.exports = {
           },
           "75%": {
             opacity: 0,
-            transform: "translateY(120px) scaler(8px)",
+            transform: "translateY(120px) scale(8)",
           },
-          "100%": {},
+          "100%": {
+            opacity: 0,
+            transform: "translateY(120px)",
+          },
         },
+      },
+      animation: {
+        "moving-dots": "dots 2s linear infinite",
       },
       height: {
         "header-height": "150px",
