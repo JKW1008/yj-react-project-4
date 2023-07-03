@@ -9,3 +9,7 @@
 ## react-icons
 
 - npm install react-icons
+
+## React Responsive Carousel
+
+- npm i react-responsive-carousel

@@ -8,7 +8,7 @@ export default function Layout({ children }) {
     <div>
       <Header />
       <div className=" relative">
-        <div>{children}</div>
+        <div className=" px-layout-padding">{children}</div>
         <div className="absolute top-0 left-0 w-layout-padding h-64">
           <LeftSide />
         </div>

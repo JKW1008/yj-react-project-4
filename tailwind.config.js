@@ -33,6 +33,7 @@ module.exports = {
       height: {
         "header-height": "150px",
         "footer-height": "200px",
+        "screen-minus-header": "calc(100vh - 180px)",
       },
       padding: {
         "layout-padding": "80px",
