@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "./components/Root";
 import NotFound from "./app/NotFound";
 import Page from "./Page";
+import InformationTicket from "./app/InformationTicket";
+import RentNotice from "./app/RentNotice";
+import RentalNoticeWrite from "./app/RentalNoticeWrite";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +15,30 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Page />,
+      },
+      {
+        path: "information",
+        element: <Root />,
+        children: [
+          {
+            path: "",
+            element: <InformationTicket />,
+          },
+        ],
+      },
+      {
+        path: "rental",
+        element: <Root />,
+        children: [
+          {
+            path: "",
+            element: <RentNotice />,
+          },
+          {
+            path: "notice-write",
+            element: <RentalNoticeWrite />,
+          },
+        ],
       },
     ],
   },

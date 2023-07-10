@@ -17,9 +17,13 @@ export default function LeftSide() {
       className="
     flex 
     flex-col 
-    w-full 
+    w-full
+     h-full
     space-y-6 
-    items-center"
+    items-center 
+    py-16
+    
+    "
     >
       {SNS_ITEMS.map(({ icon, link }) => (
         <Link to={link} key={link}>

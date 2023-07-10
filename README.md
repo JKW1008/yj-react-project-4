@@ -13,3 +13,7 @@
 ## React Responsive Carousel
 
 - npm i react-responsive-carousel
+
+## react-multi-carousel
+
+- npm i react-multi-carousel
