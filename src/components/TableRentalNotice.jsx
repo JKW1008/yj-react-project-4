@@ -8,7 +8,7 @@ export default function TableRentalNotice({ data }) {
         <div className="col-span-2">작성일</div>
       </div>
       <div>
-        <div className="grid grid-cols-12 py-4 text-center border-b border-neutral-100 cursor-pointer">
+        <div className="grid grid-cols-12 py-4 text-center border-b border-neutral-100 cursor-pointer hover:bg-neutral-200">
           <div>No.</div>
           <div className="col-span-7">제목</div>
           <div className="col-span-2">작성자</div>
