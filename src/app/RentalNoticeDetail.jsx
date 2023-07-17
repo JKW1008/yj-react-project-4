@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ButtonSlide from "../components/ButtonSlide";
 import Layout from "../components/Layout";
 import LayoutContents from "../components/LayoutContents";
 import SubTitle from "../components/SubTitle";
+import { useQuery } from "react-query";
+import { rentalNoticeDetail } from "../api";
 
 export default function RentalNoticeDetail() {
+  const { id } = useParams();
+  const { data } = useQuery(["noticeDetail", id], rentalNoticeDetail);
+  console.log(data);
   return (
     <Layout>
       <SubTitle firstTitle={"관리자모드"} secondTitle={"공지사항 상세보기"} />
@@ -13,8 +18,11 @@ export default function RentalNoticeDetail() {
           <table className="table_top w-full">
             <tbody>
               <tr>
+                <td className="table_td border-l-0" colSpan={1}>
+                  제목
+                </td>
                 <td className="table_td border-l-0" colSpan={4}>
-                  리액트 너무 재미있다.
+                  {data?.detail.title}
                 </td>
               </tr>
               <tr>
@@ -22,7 +30,7 @@ export default function RentalNoticeDetail() {
                   작성일
                 </td>
                 <td width={"40%"} className="table_td border-l-0">
-                  1분전
+                  {data?.detail.createdAt.substr(0, 10)}
                 </td>
                 <td width={"10%"} className="table_td border-l-0">
                   조회수
@@ -31,21 +39,25 @@ export default function RentalNoticeDetail() {
                   0
                 </td>
               </tr>
+              {/* 내용부분 */}
               <tr>
-                <td colSpan={4} className="table_td border-l-0">
+                <td colSpan={1} className="table_td border-l-0">
                   내용
+                </td>
+                <td colSpan={4} className="table_td border-l-0">
+                  {data?.detail.description}
                 </td>
               </tr>
               <tr>
                 <td className="table_td border-l-0">이전 글</td>
                 <td className="table_td border-l-0" colSpan={3}>
-                  이전 글 제목
+                  {data?.detail.title}
                 </td>
               </tr>
               <tr>
                 <td className="table_td border-l-0">다음 글</td>
                 <td className="table_td border-l-0" colSpan={3}>
-                  다음 글 제목
+                  {data?.detail.title}
                 </td>
               </tr>
             </tbody>
