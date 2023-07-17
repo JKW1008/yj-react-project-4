@@ -17,7 +17,7 @@ export default function SubTitle({ firstTitle, secondTitle }) {
           </div>
         </div>
         {/* 서브타이틀 */}
-        <div className="w-52 px-8 flex items-center justify-between">
+        <div className="w-52 px-4 flex items-center justify-between">
           <h2 className="">{secondTitle}</h2>
           <div>
             <BsArrowRightCircle size={"20"} />

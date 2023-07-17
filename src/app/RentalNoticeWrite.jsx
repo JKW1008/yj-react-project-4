@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ButtonSlide from "../components/ButtonSlide";
 import Layout from "../components/Layout";
 import LayoutContents from "../components/LayoutContents";
@@ -45,7 +46,9 @@ export default function RentalNoticeWrite() {
         </table>
         <div className="w-full flex justify-center border-t border-neutral-300 py-8 space-x-2">
           <ButtonSlide text={"작성하기"} />
-          <ButtonSlide text={"목록으로"} />
+          <Link to={"/rental"}>
+            <ButtonSlide text={"목록으로"} />
+          </Link>
         </div>
       </LayoutContents>
     </Layout>
