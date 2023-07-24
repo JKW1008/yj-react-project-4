@@ -17,3 +17,7 @@
 ## react-multi-carousel
 
 - npm i react-multi-carousel
+
+## react hook form
+
+- npm install react-hook-form
