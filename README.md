@@ -25,3 +25,7 @@
 ## react-daum-postcode
 
 - npm i react-daum-postcode
+
+## react-modal
+
+- npm i react-modal

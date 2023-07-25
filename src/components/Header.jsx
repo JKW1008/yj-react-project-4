@@ -39,7 +39,9 @@ export default function Header() {
             </div>
             <div>Home</div>
             <div>LogIN</div>
-            <div>Join</div>
+            <Link to={"/signup"}>
+              <div>Join</div>
+            </Link>
             <select
               size={"sm"}
               className="border border-neutral-300  text-sm rounded-sm py-1 px-2"
