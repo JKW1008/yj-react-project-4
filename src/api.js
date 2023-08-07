@@ -1,6 +1,6 @@
 const BASE_PATH =
   process.env.NODE_ENV === "production"
-    ? "https://unrivaled-smakager-43d334.netlify.app"
+    ? "https://port-0-yj-react-project4-back-kvmh2mljzfmpxr.sel4.cloudtype.app"
     : "http://localhost:8080";
 
 export async function rentalNotices() {
