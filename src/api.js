@@ -35,3 +35,15 @@ export async function rentalNoticeWrite(props) {
     body: JSON.stringify(props),
   }).then((res) => res.json());
 }
+
+export async function userRegister(props) {
+  console.log(props);
+  return await fetch(`${BASE_PATH}/api/users/register`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify(props),
+  });
+}
