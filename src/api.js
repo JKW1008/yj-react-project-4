@@ -37,7 +37,7 @@ export async function rentalNoticeWrite(props) {
 }
 
 export async function userRegister(props) {
-  console.log(props);
+  // console.log(props);
   return await fetch(`${BASE_PATH}/api/users/register`, {
     method: "POST",
     headers: {
@@ -46,4 +46,26 @@ export async function userRegister(props) {
     credentials: "include",
     body: JSON.stringify(props),
   });
+}
+
+export async function userSignIn(props) {
+  // console.log(props);
+  return await fetch(`${BASE_PATH}/api/users/signin`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify(props),
+  });
+}
+
+export async function loginSuccess() {
+  return await fetch(`${BASE_PATH}/api/users/login/success`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+  }).then((res) => res.json());
 }
