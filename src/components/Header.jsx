@@ -41,12 +41,21 @@ export default function Header() {
               <SearchAsset />
             </div>
             <div>Home</div>
-            <Link to={"/signin"}>
-              <div>LogIN</div>
-            </Link>
-            <Link to={"/signup"}>
-              <div>Join</div>
-            </Link>
+            {isLoggedIn === "true" ? (
+              <>
+                <div>{user.email}</div>
+                <div>logout</div>
+              </>
+            ) : (
+              <>
+                <Link to={"/signin"}>
+                  <div>LogIN</div>
+                </Link>
+                <Link to={"/signup"}>
+                  <div>Join</div>
+                </Link>
+              </>
+            )}
             <select
               size={"sm"}
               className="border border-neutral-300  text-sm rounded-sm py-1 px-2"
