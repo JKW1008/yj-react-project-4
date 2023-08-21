@@ -10,6 +10,7 @@ import InstagramAsset from "../components/asset/InstagramAsset";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { userSignIn } from "../api";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignIn() {
   const {
@@ -17,11 +18,17 @@ export default function SignIn() {
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "onChange" });
+  const navigate = useNavigate();
+  const { data, mutate } = useMutation(userSignIn);
 
-  const { mutate } = useMutation(userSignIn);
+  if (data?.ok === "false") {
+    console.log("error");
+  }
+  if (data?.ok === true) {
+    navigate("/");
+  }
 
   const onSubmit = (data) => {
-    console.log(data);
     mutate(data);
   };
 
@@ -85,9 +92,13 @@ export default function SignIn() {
             </div>
             {/* 회원가입, 아이디찾기, 비밀번호찾기 */}
             <div className="flex justify-center w-full space-x-3 my-8">
-              <div>
-                <KakaoAsset />
-              </div>
+              <Link
+                to={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.REACT_APP_KAKAO_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_KAKAO_REDIRECT_URI}`}
+              >
+                <div>
+                  <KakaoAsset />
+                </div>
+              </Link>
               <div>
                 <FacebookAsset />
               </div>

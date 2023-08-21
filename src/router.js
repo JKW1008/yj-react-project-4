@@ -8,6 +8,7 @@ import RentalNoticeWrite from "./app/RentalNoticeWrite";
 import RentalNoticeDetail from "./app/RentalNoticeDetail";
 import SignUp from "./app/SignUp";
 import SignIn from "./app/SignIn";
+import KakaoConfirom from "./components/socail/KakaoConfirom";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "signup",
         element: <SignUp />,
+      },
+      {
+        path: "social/kakao",
+        element: <KakaoConfirom />,
       },
       {
         path: "information",

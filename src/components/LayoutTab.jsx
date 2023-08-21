@@ -11,7 +11,7 @@ export default function LayoutTab({ tabLists, numbers }) {
             {tabLists.map(({ title }, i) => (
               <li
                 key={i}
-                className="outline outline-1 cursor-pointer outline-neutral-400 flex-auto text-center hover:bg-neutral-50"
+                className="outline outline-1 cursor-pointer outline-neutral-400 flex-auto text-center hover:bg-neutral-100"
               >
                 <div
                   onClick={(e) => {
